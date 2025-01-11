@@ -1,7 +1,8 @@
 This script compiles a Rust library for both Android and iOS and copies the generated libraries to the appropriate Flutter project directories.
 
 #### Features:
-- Compiles Rust for Android using `cargo-ndk` for `arm64-v8a`, `armeabi-v7a`, `x86_64`, and `x86` architectures.
+- Installs missing cross compilation targets
+- Compiles Rust for Android.
 - Conditionally compiles Rust for iOS if running on macOS.
 - Automatically cleans the build directory before compiling.
 - Copies `.so` (Android) and `.a` (iOS) files to the Flutter project.
