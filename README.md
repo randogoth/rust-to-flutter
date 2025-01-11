@@ -1,4 +1,4 @@
-### README for `compile_rust_for_flutter.sh`
+### README for `rust_to_flutter.sh`
 
 This script compiles a Rust library for both Android and iOS and copies the generated libraries to the appropriate Flutter project directories.
 
@@ -16,12 +16,12 @@ This script compiles a Rust library for both Android and iOS and copies the gene
 
 2. Run the script:
    ```bash
-   ./compile_rust_for_flutter.sh <path_to_rust_project> <path_to_flutter_project>
+   ./rust_to_flutter.sh <path_to_rust_project> <path_to_flutter_project>
    ```
 
 #### Example:
 ```bash
-./compile_rust_for_flutter.sh ./rust_project ./flutter_project
+./rust_to_flutter.sh ./rust_project ./flutter_project
 ```
 
 #### Notes:
