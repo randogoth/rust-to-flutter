@@ -1,5 +1,3 @@
-### README for `rust_to_flutter.sh`
-
 This script compiles a Rust library for both Android and iOS and copies the generated libraries to the appropriate Flutter project directories.
 
 #### Features:
