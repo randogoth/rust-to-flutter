@@ -27,6 +27,26 @@ fi
 
 # Enter the Rust project folder
 cd "$RUST_PROJECT_FOLDER" || exit
+
+# Function to check and install missing targets
+install_missing_targets() {
+    for target in "${@}"; do
+        if ! rustup target list --installed | grep -q "$target"; then
+            echo "Installing target: $target"
+            rustup target add "$target"
+        else
+            echo "Target already installed: $target"
+        fi
+    done
+}
+
+# Install required targets
+install_missing_targets "${ANDROID_TARGETS[@]}"
+if [ "$INCLUDE_IOS_TARGETS" = true ]; then
+    install_missing_targets "${IOS_TARGETS[@]}"
+fi
+
+# Cleanup
 echo "Cleaning Build Directory"
 cargo clean
 
