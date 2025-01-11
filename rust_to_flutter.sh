@@ -88,7 +88,7 @@ if [ "$INCLUDE_IOS_TARGETS" = true ]; then
     mkdir -p "$IOS_DEST_DIR"
     for target in "${IOS_TARGETS[@]}"; do
     	RELEASE_DIR="target/$target/release"
-    	LIB_FILE=$(find "$RELEASE_DIR" -maxdepth 1 -name "lib*.so" | head -n 1)
+    	LIB_FILE=$(find "$RELEASE_DIR" -maxdepth 1 -name "lib*.a" | head -n 1)
     	if [ -n "$LIB_FILE" ]; then
     	    cp "$LIB_FILE" "$IOS_DEST_DIR/"
     	    echo "Copied $target library to $IOS_DEST_DIR"
