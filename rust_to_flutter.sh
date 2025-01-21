@@ -5,7 +5,7 @@ set -e
 # Check for required arguments
 if [ "$#" -lt 2 ]; then
     echo "Usage: $0 [-x] <rust_project_folder> <flutter_project_folder>"
-    echo "  -x: Include x86 and x86_64 targets (optional)"
+    echo "  -x: Include x86 and x86_64 targets for Android and iOS (optional)"
     exit 1
 fi
 
@@ -42,7 +42,11 @@ if [ "$INCLUDE_X86" = true ]; then
     ANDROID_TARGETS+=("x86_64-linux-android" "i686-linux-android")
 fi
 
-IOS_TARGETS=("aarch64-apple-ios" "x86_64-apple-ios")
+# Supported targets for iOS
+IOS_TARGETS=("aarch64-apple-ios")
+if [ "$INCLUDE_X86" = true ]; then
+    IOS_TARGETS+=("x86_64-apple-ios")
+fi
 
 # Check if on macOS for iOS targets
 if [[ "${OSTYPE:-}" == "darwin"* ]]; then
