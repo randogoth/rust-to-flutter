@@ -6,7 +6,7 @@ This script compiles a Rust library for both Android and iOS and copies the gene
 - Installs missing cross-compilation targets.
 - Compiles Rust for Android.
 - Conditionally compiles Rust for iOS if running on macOS.
-- Optionally includes `x86` and `x86_64` Android targets using the `-x` flag.
+- Optionally includes `x86` and `x86_64` Android/iOS targets using the `-x` flag.
 - Automatically cleans the build directory before compiling.
 - Copies `.so` (Android) and `.dylib` (iOS) files to the Flutter project.
 
